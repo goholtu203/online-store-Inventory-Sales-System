@@ -69,10 +69,10 @@ def sell_product(store_dict, name, quantity):
     elif store_dict[name]["quantity"] < quantity:
         print(f"Not enough to supply... You requested {quantity} but only {store_dict[name]['quantity']} is available")
     else:
-        store_dict[name]["quantity"] -= quantity
-        print(f"Sold {quantity} of {name}")
-        total_sale_price = store_dict[name]['price'] * quantity
-    return total_sale_price
+	    store_dict[name]["quantity"] -= quantity
+	    print(f"Sold {quantity} of {name}")
+	    total_sale_price = store_dict[name]['price'] * quantity
+	    return total_sale_price
        
 
 
@@ -99,7 +99,7 @@ def most_expensive_product(store_dict):
 	product = None
 	for products, values in store_dict.items():
 		if values['price'] > price:
-			price = f"Price: {values['price']:,.2f}₦"
+			price = values['price']
 			product = products
 	return product, price
 #Calculate the total value of all remaining stock  and return it.
